@@ -1,0 +1,399 @@
+#page1 {
+    background: url(/static/images/SSBack1920.jpg) #A98436 no-repeat left top;
+    background-size: 100%;
+}
+
+header {
+    padding: 1px 0;            
+    background-color: rgba(0,0,0,.3);
+    background-image: linear-gradient(top, #6f3736, #4c2626);
+    position:absolute;
+    top: 0%;
+    left: 0%;
+    width:100%;
+    height:75px;
+}
+
+nav {
+    position:relative;
+    top: 35px;
+}
+
+ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	padding-top:6px;
+	padding-bottom:6px;
+}
+
+li {
+	display:inline;
+}
+
+a:link,a:visited {
+	color:black;
+	background-color:rgba(0,0,0,.2);
+	text-align:center;
+	padding:6px;
+	text-decoration:none;
+}
+
+a:hover,a:active {
+	background-color:rgba(0,0,0,.3);
+}
+
+#headerTitle {
+    position:absolute;
+    top: 5px;
+    left: 20%;
+    font-size:20pt; 
+	color:black;
+}
+
+#timerLabel {
+	position:absolute;
+	font-size:14pt;
+	color:#000;
+	top: 85px;
+	left: 829px;
+}
+
+#stringTimer {
+	margin-top:3px;
+	font-size:26pt; 
+	color:#006; 
+	text-align:center; 
+	width:145px;
+	height:42px;
+}
+
+#borderTimer {
+	position:absolute;
+	top: 107px;
+	left: 800px;
+}
+
+#temperatureLabel {
+	position:absolute;
+	font-size:14pt;
+	color:#000;
+	top: 180px;
+	left: 813px;
+}
+
+#numericTemperature {
+	font-size:24pt; 
+	color:#006; 
+	text-align:center; 
+	width:145px;
+}
+
+#borderTemperature {
+	position:absolute;
+	top: 205px;
+	left: 800px;
+}
+
+#stringBurnerStatus {
+	font-size:24pt;
+	color:#006;
+	text-align:center;
+	width:160px;
+}
+   
+#borderBurnerStatus {
+	position:absolute;
+	top: 107px;
+	left: 45px;
+	width: 160px;
+}
+
+#buttonBurnerStart {
+	width:60px;
+	height:60px;
+}
+
+#borderBurnerStart {
+	margin-left:30px;
+	position:absolute;
+	top: 173px;
+	left: 15px;
+	height: 60px;
+}
+
+#buttonBurnerStop {
+	width:60px;
+	height:60px;
+}
+
+#borderBurnerStop {
+	margin-left:30px;
+	position:absolute;
+	top: 173px;
+	left: 103px;
+}
+
+#stringWaterValveStatus {
+	font-size:24pt;
+	color:#006;
+	text-align:center;
+	width:160px;
+}
+   
+#borderWaterValveStatus {
+	position:absolute;
+	top: 320px;
+	left: 19px;
+	width: 161px;
+}
+
+#buttonWaterValveOpen {
+	width:60px;
+	height:60px;
+}
+
+#borderWaterValveOpen {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: -11px;
+}
+
+#buttonWaterValveClose {
+	width:60px;
+	height:60px;
+}
+
+#borderWaterValveClose {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: 80px;
+}
+
+#stringKValveStatus {
+	font-size:24pt;
+	color:#006;
+	text-align:center;
+	width:160px;
+}
+   
+#borderKValveStatus {
+	position:absolute;
+	top: 321px;
+	left: 839px;
+}
+
+#buttonKValveOpen {
+	width:60px;
+	height:60px;
+}
+
+#borderKValveOpen {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: 810px;
+}
+
+#buttonKValveClose {
+	width:60px;
+	height:60px;
+}
+
+#borderKValveClose {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: 899px;
+}
+
+#stringMValveStatus {
+	font-size:24pt;
+	color:#006;
+	text-align:center;
+	width:160px;
+}
+   
+#borderMValveStatus {
+	position:absolute;
+	top: 321px;
+	left: 638px;
+}
+
+#buttonMValveOpen {
+	width:60px;
+	height:60px;
+}
+
+#borderMValveOpen {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: 608px;
+}
+
+#buttonMValveClose {
+	width:60px;
+	height:60px;
+}
+
+#borderMValveClose {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: 699px;
+}
+
+#stringCValveStatus {
+	font-size:24pt;
+	color:#006;
+	text-align:center;
+	width:160px;
+}
+   
+#borderCValveStatus {
+	position:absolute;
+	top: 321px;
+	left: 225px;
+	width: 160px;
+}
+
+#buttonCValveOpen {
+	width:60px;
+	height:60px;
+}
+
+#borderCValveOpen {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: 193px;
+}
+
+#buttonCValveClose {
+	width:60px;
+	height:60px;
+}
+
+#borderCValveClose {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: 286px;
+}
+
+#stringToKValveStatus {
+	font-size:24pt;
+	color:#006;
+	text-align:center;
+	width:160px;
+}
+   
+#borderToKValveStatus {
+	position:absolute;
+	top: 322px;
+	left: 431px;
+}
+
+#buttonToKValveOpen {
+	width:60px;
+	height:60px;
+}
+
+#borderToKValveOpen {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: 402px;
+	height: 60px;
+}
+
+#buttonToKValveClose {
+	width:60px;
+	height:60px;
+}
+
+#borderToKValveClose {
+	margin-left:30px;
+	position:absolute;
+	top: 384px;
+	left: 491px;
+}
+
+#stringPumpStatus {
+	font-size:24pt;
+	color:#006;
+	text-align:center;
+	width:160px;
+}
+   
+#borderPumpStatus {
+	position:absolute;
+	top: 107px;
+	left: 302px;
+	width: 160px;
+}
+
+#buttonPumpStart {
+	width:60px;
+	height:60px;
+}
+
+#borderPumpStart {
+	margin-left:30px;
+	position:absolute;
+	top: 173px;
+	left: 272px;
+}
+
+#buttonPumpStop {
+	width:60px;
+	height:60px;
+}
+
+#borderPumpStop {
+	margin-left:30px;
+	position:absolute;
+	top: 173px;
+	left: 360px;
+}
+
+#stringLogStatus {
+	font-size:24pt;
+	color:#006;
+	text-align:center;
+	width:160px;
+}
+   
+#borderLogStatus {
+	position:absolute;
+	top: 107px;
+	left: 549px;
+	width: 160px;
+}
+
+#buttonLogStart {
+	width:60px;
+	height:60px;
+}
+
+#borderLogStart {
+	margin-left:30px;
+	position:absolute;
+	top: 173px;
+	left: 519px;
+}
+
+#buttonLogStop {
+	width:60px;
+	height:60px;
+}
+
+#borderLogStop {
+	margin-left:30px;
+	position:absolute;
+	top: 173px;
+	left: 608px;
+}

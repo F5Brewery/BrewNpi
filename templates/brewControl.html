@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Brew N Pi</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/brewControl.css" />
+        <!-- JMWidget styles -->
+    <link rel="stylesheet" href="../static/jmwidgets/css/base/jmwidgets-0.8.0.base.min.css">
+    <link rel="stylesheet" href="../static/jmwidgets/css/jmwidgets-0.8.0.allstyles.min.css">
+        <!-- jQuery classes -->
+    <script src="../static/jquery-ui-1.9.0.custom/js/jquery-1.8.2.js"></script>
+    <script src="../static/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.js"></script>
+        <!-- JMWidget classes -->
+    <script src="../static/jmwidgets/js/jmwidgets-0.8.0.min.js"></script>
+    <script src="../static/jmwidgets/js/jq.hmi.pythondata.js"></script>
+    <script src="../static/jmwidgets/js/hmi.pythondata.js"></script>
+    <script src="../static/jmwidgets/js/jq.hmi.string.js"></script>
+    <script src="../static/jmwidgets/js/hmi.string.js"></script>
+
+    <script>
+        jQuery(function() {
+       jQuery("#page1").hmiPage();
+       jQuery("#stringTimer").hmiString({rw:'r'});
+       jQuery("#borderTimer").hmiBorder({shape:'rrect', style:'chrome' });
+       jQuery("#numericTemperature").hmiNumeric({rw:'rw', format:'#.#'});
+       jQuery("#borderTemperature").hmiBorder({shape:'rrect', style:'chrome' });       
+       
+        jQuery("#stringLogStatus").hmiString({rw:'r'});
+       jQuery("#borderLogStatus").hmiBorder({shape:'rrect', style:'chrome' });
+       jQuery("#buttonLogStart").hmiButton({shape:'rrect', fill:'green' });
+       jQuery("#borderLogStart").hmiBorder({shape:'rrect', style:'chrome'} );
+       jQuery("#buttonLogStop").hmiButton({shape:'rrect', fill:'red' });
+       jQuery("#borderLogStop").hmiBorder({shape:'rrect', style:'chrome'} );
+       
+       jQuery("#stringBurnerStatus").hmiString({rw:'r'});
+       jQuery("#borderBurnerStatus").hmiBorder({shape:'rrect', style:'chrome' });
+       jQuery("#buttonBurnerStart").hmiButton({shape:'rrect', fill:'green' });
+       jQuery("#borderBurnerStart").hmiBorder({shape:'rrect', style:'chrome'} );
+       jQuery("#buttonBurnerStop").hmiButton({shape:'rrect', fill:'red' });
+       jQuery("#borderBurnerStop").hmiBorder({shape:'rrect', style:'chrome'} );
+       
+       jQuery("#stringWaterValveStatus").hmiString({rw:'r'});
+       jQuery("#borderWaterValveStatus").hmiBorder({shape:'rrect', style:'chrome' });
+       jQuery("#buttonWaterValveOpen").hmiButton({shape:'rrect', fill:'green' });
+       jQuery("#borderWaterValveOpen").hmiBorder({shape:'rrect', style:'chrome'} );
+       jQuery("#buttonWaterValveClose").hmiButton({shape:'rrect', fill:'red' });
+       jQuery("#borderWaterValveClose").hmiBorder({shape:'rrect', style:'chrome'} );
+       
+	   jQuery("#stringKValveStatus").hmiString({rw:'r'});
+       jQuery("#borderKValveStatus").hmiBorder({shape:'rrect', style:'chrome' });
+       jQuery("#buttonKValveOpen").hmiButton({shape:'rrect', fill:'green' });
+       jQuery("#borderKValveOpen").hmiBorder({shape:'rrect', style:'chrome'} );
+       jQuery("#buttonKValveClose").hmiButton({shape:'rrect', fill:'red' });
+       jQuery("#borderKValveClose").hmiBorder({shape:'rrect', style:'chrome'} );
+	   
+	   jQuery("#stringMValveStatus").hmiString({rw:'r'});
+       jQuery("#borderMValveStatus").hmiBorder({shape:'rrect', style:'chrome' });
+       jQuery("#buttonMValveOpen").hmiButton({shape:'rrect', fill:'green' });
+       jQuery("#borderMValveOpen").hmiBorder({shape:'rrect', style:'chrome'} );
+       jQuery("#buttonMValveClose").hmiButton({shape:'rrect', fill:'red' });
+       jQuery("#borderMValveClose").hmiBorder({shape:'rrect', style:'chrome'} );
+	   
+	   jQuery("#stringCValveStatus").hmiString({rw:'r'});
+       jQuery("#borderCValveStatus").hmiBorder({shape:'rrect', style:'chrome' });
+       jQuery("#buttonCValveOpen").hmiButton({shape:'rrect', fill:'green' });
+       jQuery("#borderCValveOpen").hmiBorder({shape:'rrect', style:'chrome'} );
+       jQuery("#buttonCValveClose").hmiButton({shape:'rrect', fill:'red' });
+       jQuery("#borderCValveClose").hmiBorder({shape:'rrect', style:'chrome'} );
+	   
+	   jQuery("#stringToKValveStatus").hmiString({rw:'r'});
+       jQuery("#borderToKValveStatus").hmiBorder({shape:'rrect', style:'chrome' });
+       jQuery("#buttonToKValveOpen").hmiButton({shape:'rrect', fill:'green' });
+       jQuery("#borderToKValveOpen").hmiBorder({shape:'rrect', style:'chrome'} );
+       jQuery("#buttonToKValveClose").hmiButton({shape:'rrect', fill:'red' });
+       jQuery("#borderToKValveClose").hmiBorder({shape:'rrect', style:'chrome'} );
+	   
+	   
+        jQuery("#stringPumpStatus").hmiString({rw:'r'});
+       jQuery("#borderPumpStatus").hmiBorder({shape:'rrect', style:'chrome' });
+       jQuery("#buttonPumpStart").hmiButton({shape:'rrect', fill:'green' });
+       jQuery("#borderPumpStart").hmiBorder({shape:'rrect', style:'chrome'} );
+       jQuery("#buttonPumpStop").hmiButton({shape:'rrect', fill:'red' });
+       jQuery("#borderPumpStop").hmiBorder({shape:'rrect', style:'chrome'} );
+       
+       
+       jQuery("#server1").hmiPythonData( {groupName:'poo', projectName:'fuck', deviceID:'shit'} );          
+       // attach numeric and slider to the variables data source to show changing values
+        jQuery("#stringTimer").hmiAttach("#server1", {tag:'timerString', rw:'r', attr:'value'});
+       jQuery("#numericTemperature").hmiAttach("#server1", {tag:'temperature', rw:'rw', attr:'value'});
+       
+       jQuery("#stringLogStatus").hmiAttach("#server1", {tag:'dataLoggingStatus', rw:'r', attr:'value'});
+       jQuery("#buttonLogStart").hmiAttach("#server1", {tag:'cmdStartDataLog', rw:'rw', attr:'value'});
+       jQuery("#buttonLogStop").hmiAttach("#server1", {tag:'cmdStopDataLog', rw:'rw', attr:'value'});
+       
+       jQuery("#stringBurnerStatus").hmiAttach("#server1", {tag:'burnerStatus', rw:'r', attr:'value'});
+       jQuery("#buttonBurnerStart").hmiAttach("#server1", {tag:'cmdStartBurner', rw:'rw', attr:'value'});
+       jQuery("#buttonBurnerStop").hmiAttach("#server1", {tag:'cmdStopBurner', rw:'rw', attr:'value'});
+       
+       jQuery("#stringWaterValveStatus").hmiAttach("#server1", {tag:'waterValveStatus', rw:'r', attr:'value'});
+       jQuery("#buttonWaterValveOpen").hmiAttach("#server1", {tag:'cmdOpenWaterValve', rw:'rw', attr:'value'});
+       jQuery("#buttonWaterValveClose").hmiAttach("#server1", {tag:'cmdCloseWaterValve', rw:'rw', attr:'value'});
+       
+	   jQuery("#stringKValveStatus").hmiAttach("#server1", {tag:'KValveStatus', rw:'r', attr:'value'});
+       jQuery("#buttonKValveOpen").hmiAttach("#server1", {tag:'cmdOpenKValve', rw:'rw', attr:'value'});
+       jQuery("#buttonKValveClose").hmiAttach("#server1", {tag:'cmdCloseKValve', rw:'rw', attr:'value'});
+	   
+	   jQuery("#stringMValveStatus").hmiAttach("#server1", {tag:'MValveStatus', rw:'r', attr:'value'});
+       jQuery("#buttonMValveOpen").hmiAttach("#server1", {tag:'cmdOpenMValve', rw:'rw', attr:'value'});
+       jQuery("#buttonMValveClose").hmiAttach("#server1", {tag:'cmdCloseMValve', rw:'rw', attr:'value'});
+	   
+	   jQuery("#stringCValveStatus").hmiAttach("#server1", {tag:'CValveStatus', rw:'r', attr:'value'});
+       jQuery("#buttonCValveOpen").hmiAttach("#server1", {tag:'cmdOpenCValve', rw:'rw', attr:'value'});
+       jQuery("#buttonCValveClose").hmiAttach("#server1", {tag:'cmdCloseCValve', rw:'rw', attr:'value'});
+	   
+	   jQuery("#stringToKValveStatus").hmiAttach("#server1", {tag:'ToKValveStatus', rw:'r', attr:'value'});
+       jQuery("#buttonToKValveOpen").hmiAttach("#server1", {tag:'cmdOpenToKValve', rw:'rw', attr:'value'});
+       jQuery("#buttonToKValveClose").hmiAttach("#server1", {tag:'cmdCloseToKValve', rw:'rw', attr:'value'});
+	   
+        jQuery("#stringPumpStatus").hmiAttach("#server1", {tag:'pumpStatus', rw:'r', attr:'value'});
+       jQuery("#buttonPumpStart").hmiAttach("#server1", {tag:'cmdStartPump', rw:'rw', attr:'value'});
+       jQuery("#buttonPumpStop").hmiAttach("#server1", {tag:'cmdStopPump', rw:'rw', attr:'value'});
+        // start page operations
+        jQuery('#page1').trigger('pagestart');  
+    });
+    </script>
+
+</head>
+<body id="page1">
+    <header>
+        <h1> </h1>    
+    </header>
+    <nav>
+    <ul>
+    <li><a href="/">Status</a></li>
+    <li><a href="brewControl">Control</a></li>
+    <li><a href="brewTrend">Trend</a></li>
+    <li><a href="brewSetup">Setup</a></li>
+    </ul>
+    </nav>
+    <div id="headerTitle">Brew N Pi Automated Brewing Controller</div>
+    <br >
+    <div id="server1"></div>
+    <br >
+    <div id="borderLogStatus" >
+        <div id="stringLogStatus" >000</div>
+    </div>
+<br >
+    <div id="timerLabel">Brew Timer</div>
+    <div id="borderTimer" >
+      <div id="stringTimer" >000</div>
+    </div>
+    <div id="temperatureLabel">Temperature(&deg; F)</div>
+    <div id="borderTemperature" >
+      <div id="numericTemperature" >000</div>
+    </div>
+    <br >
+    <div id="borderLogStart" >
+        <button id="buttonLogStart" >Start Log</button>
+    </div>
+    <div id="borderLogStop" >
+      <button id="buttonLogStop" >Stop Log</button>
+    </div>
+    
+    <div id="borderBurnerStatus" >
+      <div id="stringBurnerStatus" >000</div>
+    </div>
+    <div id="borderBurnerStart" >
+      <button id="buttonBurnerStart" >Start Heat</button>
+    </div>
+<div id="borderBurnerStop" >
+<button id="buttonBurnerStop" >Stop Heat</button>
+    </div>
+    
+    <div id="borderWaterValveStatus" >
+        <div id="stringWaterValveStatus" >000</div>
+    </div>
+    <div id="borderWaterValveOpen" >
+      <button id="buttonWaterValveOpen" > RIMS In</button>
+</div>
+<div id="borderWaterValveClose" >
+<button id="buttonWaterValveClose" > RIMS In</button>
+    </div>
+    <div id="borderKValveStatus" >
+      <div id="stringKValveStatus" >000</div>
+    </div>
+    <div id="borderKValveOpen" >
+      <button id="buttonKValveOpen" > Kettle Out</button>
+</div>
+    <div id="borderKValveClose" >
+      <button id="buttonKValveClose" > Kettle Out</button>
+</div>
+<div id="borderMValveStatus" >
+  <div id="stringMValveStatus" >000</div>
+</div>
+    <div id="borderMValveOpen" >
+      <button id="buttonMValveOpen" > Mash Out</button>
+</div>
+    <div id="borderMValveClose" >
+      <button id="buttonMValveClose" > Mash Out</button>
+</div>
+    <div id="borderToKValveStatus" >
+        <div id="stringToKValveStatus" >000</div>
+    </div>
+    <div id="borderToKValveOpen" >
+      <button id="buttonToKValveOpen" > Kettle In</button>
+</div>
+    <div id="borderToKValveClose" >
+      <button id="buttonToKValveClose" > Kettle In</button>
+</div>
+    <div id="borderCValveStatus" >
+      <div id="stringCValveStatus" >000</div>
+</div>
+    <div id="borderCValveOpen" >
+      <button id="buttonCValveOpen" > Chiller In</button>
+</div>
+    <div id="borderCValveClose" >
+      <button id="buttonCValveClose" > Chiller In</button>
+</div>
+    <div id="borderPumpStatus" >
+      <div id="stringPumpStatus" >000</div>
+</div>
+    <div id="borderPumpStart" >
+      <button id="buttonPumpStart" >Start Pump</button>
+    </div>
+    <div id="borderPumpStop" >
+      <button id="buttonPumpStop" >Stop Pump</button>
+    </div>
+    
+</body>
+</html>
